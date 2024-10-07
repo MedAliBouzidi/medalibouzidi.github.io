@@ -7,6 +7,7 @@ import {CalendarIcon, GithubIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-
 import {AnimatePresence, motion} from "framer-motion"
 import {experiences, navBarItems, projects, skills} from "@/app/data";
 import {useState} from "react";
+import {PiLinktreeLogo} from "react-icons/pi";
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -200,6 +201,12 @@ export default function Home() {
             <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
                 <p className="text-xs text-gray-400">© 2024 Bouzidi Mohamed Ali. All rights reserved.</p>
                 <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+                    <Link className="text-xs hover:text-gray-300 transition-colors"
+                          target="_blank"
+                          href="https://linktr.ee/MedAliBouzidi">
+                        <PiLinktreeLogo className="h-6 w-6"/>
+                        <span className="sr-only">GitHub</span>
+                    </Link>
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
                           href="https://github.com/MedAliBouzidi">
