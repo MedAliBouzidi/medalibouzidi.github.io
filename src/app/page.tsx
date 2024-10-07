@@ -65,10 +65,10 @@ export default function Home() {
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
                                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                                    John Doe
+                                    Bouzidi Mohamed Ali
                                 </h1>
                                 <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl lg:text-2xl">
-                                    Junior Full Stack Developer passionate about creating web applications that make a difference.
+                                    Full Stack Developer passionate about creating web applications that make a difference.
                                 </p>
                             </div>
                             <div className="space-x-4">
