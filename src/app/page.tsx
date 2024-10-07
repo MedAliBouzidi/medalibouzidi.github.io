@@ -198,7 +198,7 @@ export default function Home() {
                 </section>
             </main>
             <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
-                <p className="text-xs text-gray-400">© 2024 John Doe. All rights reserved.</p>
+                <p className="text-xs text-gray-400">© 2024 Bouzidi Mohamed Ali. All rights reserved.</p>
                 <nav className="sm:ml-auto flex gap-4 sm:gap-6">
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
