@@ -5,7 +5,9 @@ import {ProjectsSection} from "@/components/projectsSection";
 
 
 export default function ProjectDetails() {
-    return (<ProjectsSection/>)
+    return (
+        <ProjectsSection/>
+    );
 }
 
 export function generateStaticParams() {
