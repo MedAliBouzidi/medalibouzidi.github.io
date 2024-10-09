@@ -16,7 +16,6 @@ import {
 } from "react-icons/bi";
 import {TbBrandNextjs} from "react-icons/tb";
 import {SiGit, SiGithub, SiGithubactions, SiLinux, SiMariadb, SiMongodb} from "react-icons/si";
-import {v4} from "uuid";
 
 export const navBarItems = ["About", "Skills", "Experiences", "Projects", "Contact"];
 
