@@ -3,9 +3,9 @@
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import Link from "next/link"
-import {CalendarIcon, GithubIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
+import {CalendarIcon, DownloadIcon, GithubIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
-import {experiences, navBarItems, projects, softSkills, technicalSkills} from "@/app/data";
+import {experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
 
@@ -84,7 +84,8 @@ export default function Home() {
                         </div>
                     </motion.div>
                 </section>
-                <section id="skills" className="flex flex-col items-center gap-y-14 w-full py-12 md:py-24 lg:py-32 bg-gray-800/30 border-b border-gray-700">
+                <section id="skills"
+                         className="flex flex-col items-center gap-y-14 w-full py-12 md:py-24 lg:py-32 bg-gray-800/30 border-b border-gray-700">
                     <div className="container px-4 md:px-6 md:w-11/12 text-center">
                         <motion.h2
                             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600" {...fadeInUp}>
@@ -198,53 +199,49 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section id="contact" className="flex justify-center w-full py-12 md:py-24 lg:py-32 bg-gray-800/30">
+                <section id="resume" className="w-full py-12 md:py-24 lg:py-32 bg-gray-800/30">
                     <div className="container px-4 md:px-6">
                         <motion.h2
-                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-red-600" {...fadeInUp}>
-                            Contact Me
+                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
+                            Download My Resume
                         </motion.h2>
-                        <motion.form className="max-w-md mx-auto space-y-4" {...fadeInUp}>
-                            <input
-                                className="w-full p-2 bg-gray-700/50 border border-gray-600 rounded text-white focus:border-pink-500 transition-colors"
-                                placeholder="Name"/>
-                            <input
-                                className="w-full p-2 bg-gray-700/50 border border-gray-600 rounded text-white focus:border-pink-500 transition-colors"
-                                type="email" placeholder="Email"/>
-                            <textarea
-                                className="w-full p-2 bg-gray-700/50 border border-gray-600 rounded text-white focus:border-pink-500 transition-colors"
-                                placeholder="Message" rows={4}></textarea>
-                            <Button type="submit"
-                                    className="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600 transition-colors">Send
-                                Message</Button>
-                        </motion.form>
+                        <motion.div className="max-w-md mx-auto text-center" {...fadeInUp}>
+                            <p className="text-gray-300 mb-6">
+                                Interested in my qualifications? Download my resume to learn more about my skills, experiences, and achievements.
+                            </p>
+                            <Button onClick={() => window.open("/assets/resume.pdf")}
+                                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
+                                <DownloadIcon className="mr-2 h-4 w-4"/>
+                                Download Resume (PDF)
+                            </Button>
+                        </motion.div>
                     </div>
                 </section>
             </main>
-            <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
+            <footer className="flex flex-col-reverse gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
                 <p className="text-xs text-gray-400">© 2024 Bouzidi Mohamed Ali. All rights reserved.</p>
                 <nav className="sm:ml-auto flex gap-4 sm:gap-6">
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
-                          href="https://linktr.ee/MedAliBouzidi">
+                          href={socialLinks.linktree}>
                         <PiLinktreeLogo className="h-6 w-6"/>
-                        <span className="sr-only">GitHub</span>
+                        <span className="sr-only">Linktree</span>
                     </Link>
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
-                          href="https://github.com/MedAliBouzidi">
+                          href={socialLinks.github}>
                         <GithubIcon className="h-6 w-6"/>
                         <span className="sr-only">GitHub</span>
                     </Link>
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
-                          href="https://www.linkedin.com/in/bouzidi-med-ali/">
-                        <LinkedinIcon className="h-6 w-6"/>
+                          href={socialLinks.linkedin}>
+                    <LinkedinIcon className="h-6 w-6"/>
                         <span className="sr-only">LinkedIn</span>
                     </Link>
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
-                          href="mailto:bouzidi.medali20@gmail.com">
+                          href={socialLinks.email}>
                         <MailIcon className="h-6 w-6"/>
                         <span className="sr-only">Email</span>
                     </Link>
