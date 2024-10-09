@@ -8,9 +8,10 @@ import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import {useParams} from "next/navigation";
 import {projects, socialLinks} from "@/app/data";
-import {ChevronLeft, ChevronRight, GithubIcon, LinkedinIcon, MailIcon} from "lucide-react";
+import {ChevronLeft, ChevronRight, LinkedinIcon, MailIcon} from "lucide-react";
 import Link from "next/link";
 import {PiLinktreeLogo} from "react-icons/pi";
+import {FaGithub} from "react-icons/fa6";
 
 const CustomArrow = ({direction, onClick}: { direction: 'next' | 'prev', onClick?: () => void }) => {
     return (
@@ -128,7 +129,7 @@ export const ProjectsSection = () => {
                         <Link className="text-xs hover:text-gray-300 transition-colors"
                               target="_blank"
                               href={socialLinks.github}>
-                            <GithubIcon className="h-6 w-6"/>
+                            <FaGithub className="h-6 w-6"/>
                             <span className="sr-only">GitHub</span>
                         </Link>
                         <Link className="text-xs hover:text-gray-300 transition-colors"

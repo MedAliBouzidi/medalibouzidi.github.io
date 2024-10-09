@@ -3,11 +3,12 @@
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import Link from "next/link"
-import {CalendarIcon, DownloadIcon, GithubIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
+import {CalendarIcon, DownloadIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
 import {experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
+import {FaGithub} from "react-icons/fa6";
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -199,7 +200,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section id="resume" className="w-full py-12 md:py-24 lg:py-32 bg-gray-800/30">
+                <section id="resume" className="flex justify-center w-full py-12 md:py-24 lg:py-32 bg-gray-800/30">
                     <div className="container px-4 md:px-6">
                         <motion.h2
                             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
@@ -210,7 +211,7 @@ export default function Home() {
                                 Interested in my qualifications? Download my resume to learn more about my skills, experiences, and achievements.
                             </p>
                             <Button onClick={() => window.open("/assets/resume.pdf")}
-                                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
+                                    className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
                                 <DownloadIcon className="mr-2 h-4 w-4"/>
                                 Download Resume (PDF)
                             </Button>
@@ -230,13 +231,13 @@ export default function Home() {
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
                           href={socialLinks.github}>
-                        <GithubIcon className="h-6 w-6"/>
+                        <FaGithub className="h-6 w-6"/>
                         <span className="sr-only">GitHub</span>
                     </Link>
                     <Link className="text-xs hover:text-gray-300 transition-colors"
                           target="_blank"
                           href={socialLinks.linkedin}>
-                    <LinkedinIcon className="h-6 w-6"/>
+                        <LinkedinIcon className="h-6 w-6"/>
                         <span className="sr-only">LinkedIn</span>
                     </Link>
                     <Link className="text-xs hover:text-gray-300 transition-colors"
