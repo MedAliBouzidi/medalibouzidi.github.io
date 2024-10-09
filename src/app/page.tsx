@@ -5,10 +5,11 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import Link from "next/link"
 import {CalendarIcon, DownloadIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
-import {experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
+import {experiences, githubStats, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
 import {FaGithub} from "react-icons/fa6";
+import Image from "next/image";
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -74,12 +75,15 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="space-x-4">
-                                <Link href={"#contact"}>
-                                    <Button className="bg-blue-600 text-white hover:bg-blue-700 transition-colors">Contact Me</Button>
+                                <Link href={"#resume"}>
+                                    <Button className="bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+                                        Download Resume
+                                    </Button>
                                 </Link>
                                 <Link href={"#projects"}>
                                     <Button variant="outline" className="bg-gray-800 text-white hover:bg-gray-700 border-gray-700 transition-colors">View
-                                        Projects</Button>
+                                        Projects
+                                    </Button>
                                 </Link>
                             </div>
                         </div>
@@ -197,6 +201,9 @@ export default function Home() {
                                     </Card>
                                 </motion.div>
                             ))}
+                        </div>
+                        <div className="flex justify-center mt-24">
+                            <Image alt="stats" src={githubStats} width={600} height={300}/>
                         </div>
                     </div>
                 </section>
