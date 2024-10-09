@@ -7,8 +7,10 @@ import Slider from "react-slick";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import {useParams} from "next/navigation";
-import {projects} from "@/app/data";
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import {projects, socialLinks} from "@/app/data";
+import {ChevronLeft, ChevronRight, GithubIcon, LinkedinIcon, MailIcon} from "lucide-react";
+import Link from "next/link";
+import {PiLinktreeLogo} from "react-icons/pi";
 
 const CustomArrow = ({direction, onClick}: { direction: 'next' | 'prev', onClick?: () => void }) => {
     return (
@@ -45,11 +47,11 @@ export const ProjectsSection = () => {
     return (!project)
         ? (<NotFound/>)
         : (
-            <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100">
+            <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100">
                 <header className="px-4 lg:px-6 h-14 flex items-center border-b border-gray-800 backdrop-blur-sm bg-gray-900/50 fixed w-full z-10">
                     <BackToHomeButton/>
                 </header>
-                <main className="pt-14 pb-8 px-4 sm:px-6 lg:px-8">
+                <main className="grow pt-14 pb-8 px-4 sm:px-6 lg:px-8">
                     <motion.div
                         className="max-w-4xl mx-auto"
                         initial={{opacity: 0, y: 20}}
@@ -114,6 +116,35 @@ export const ProjectsSection = () => {
                         </div>
                     </motion.div>
                 </main>
+                <footer className="flex flex-col-reverse gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
+                    <p className="text-xs text-gray-400">© 2024 Bouzidi Mohamed Ali. All rights reserved.</p>
+                    <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+                        <Link className="text-xs hover:text-gray-300 transition-colors"
+                              target="_blank"
+                              href={socialLinks.linktree}>
+                            <PiLinktreeLogo className="h-6 w-6"/>
+                            <span className="sr-only">Linktree</span>
+                        </Link>
+                        <Link className="text-xs hover:text-gray-300 transition-colors"
+                              target="_blank"
+                              href={socialLinks.github}>
+                            <GithubIcon className="h-6 w-6"/>
+                            <span className="sr-only">GitHub</span>
+                        </Link>
+                        <Link className="text-xs hover:text-gray-300 transition-colors"
+                              target="_blank"
+                              href={socialLinks.linkedin}>
+                            <LinkedinIcon className="h-6 w-6"/>
+                            <span className="sr-only">LinkedIn</span>
+                        </Link>
+                        <Link className="text-xs hover:text-gray-300 transition-colors"
+                              target="_blank"
+                              href={socialLinks.email}>
+                            <MailIcon className="h-6 w-6"/>
+                            <span className="sr-only">Email</span>
+                        </Link>
+                    </nav>
+                </footer>
             </div>
         )
 }
