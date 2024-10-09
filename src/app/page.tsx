@@ -207,7 +207,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section id="resume" className="flex justify-center w-full py-12 md:py-24 lg:py-32 bg-gray-800/30">
+                <section id="resume" className="flex justify-center w-full py-12 md:py-24 lg:pb-32 lg:pt-5 bg-gray-800/30">
                     <div className="container px-4 md:px-6">
                         <motion.h2
                             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
