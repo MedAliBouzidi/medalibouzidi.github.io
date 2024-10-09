@@ -216,3 +216,5 @@ export const socialLinks = {
     linkedin: "https://www.linkedin.com/in/bouzidi-med-ali/",
     email: "mailto:bouzidi.medali20@gmail.com",
 }
+
+export const githubStats = "https://github-readme-stats-sigma-eight-43.vercel.app/api?username=MedAliBouzidi&hide=contribs,issues&show_icons=true&rank_icon=github&theme=transparent";
