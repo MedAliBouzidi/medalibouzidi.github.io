@@ -5,7 +5,7 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import Link from "next/link"
 import {CalendarIcon, GithubIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
-import {experiences, navBarItems, projects, skills} from "@/app/data";
+import {experiences, navBarItems, projects, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
 
@@ -61,7 +61,7 @@ export default function Home() {
                 )}
             </AnimatePresence>
             <main className="flex-1 pt-16">
-                <section id="about" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 border-b border-gray-800">
+                <section id="about" className="flex justify-center w-full py-12 md:py-24 lg:py-32 xl:py-48 border-b border-gray-800">
                     <motion.div className="container px-4 md:px-6" {...fadeInUp}>
                         <div className="flex flex-col items-center space-y-4 text-center">
                             <div className="space-y-2">
@@ -84,14 +84,37 @@ export default function Home() {
                         </div>
                     </motion.div>
                 </section>
-                <section id="skills" className="flex justify-center w-full py-12 md:py-24 lg:py-32 bg-gray-800/30 border-b border-gray-700">
+                <section id="skills" className="flex flex-col items-center gap-y-14 w-full py-12 md:py-24 lg:py-32 bg-gray-800/30 border-b border-gray-700">
                     <div className="container px-4 md:px-6 md:w-11/12 text-center">
                         <motion.h2
                             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600" {...fadeInUp}>
-                            Skills
+                            Technical Skills
                         </motion.h2>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {skills.map((skill, index) => (
+                            {technicalSkills.map((skill, index) => (
+                                <motion.div
+                                    key={skill.key}
+                                    initial={{opacity: 0, scale: 0.9}}
+                                    animate={{opacity: 1, scale: 1}}
+                                    transition={{duration: 0.3, delay: index * 0.1}}
+                                >
+                                    <Card
+                                        className="bg-gray-700/50 border-gray-600 hover:border-green-500 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                                        <CardContent className="flex gap-x-5 p-4">
+                                            {skill.icon}<p className="text-lg font-semibold text-white">{skill.name}</p>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="container px-4 md:px-6 md:w-11/12 text-center">
+                        <motion.h2
+                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600" {...fadeInUp}>
+                            Soft-Skills
+                        </motion.h2>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {softSkills.map((skill, index) => (
                                 <motion.div
                                     key={skill}
                                     initial={{opacity: 0, scale: 0.9}}
