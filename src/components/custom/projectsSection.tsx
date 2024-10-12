@@ -1,7 +1,7 @@
 "use client";
 
-import NotFound from "@/components/404";
-import {BackToHomeButton} from "@/components/BackToHomeButton";
+import NotFound from "@/components/custom/404";
+import {BackToHomeButton} from "@/components/custom/BackToHomeButton";
 import {motion} from "framer-motion";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import {ChevronLeft, ChevronRight, LinkedinIcon, MailIcon} from "lucide-react";
 import Link from "next/link";
 import {PiLinktreeLogo} from "react-icons/pi";
 import {FaGithub} from "react-icons/fa6";
+import {CustomBadge} from "@/components/custom/CustomBadge";
 
 const CustomArrow = ({direction, onClick}: { direction: 'next' | 'prev', onClick?: () => void }) => {
     return (
@@ -80,12 +81,13 @@ export const ProjectsSection = () => {
                         }
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="md:col-span-2">
-                                <Card className="bg-gray-800/50 border-gray-700">
+                                <Card className="relative bg-gray-800/50 border-gray-700">
                                     <CardContent className="p-6">
                                         <h1 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                                             {project.title}
                                         </h1>
-                                        <p className="text-gray-300 mb-6">{project.longDescription}</p>
+                                        <p className="text-gray-300 mb-6"
+                                           dangerouslySetInnerHTML={{__html: project.longDescription}}/>
                                         <h2 className="text-xl font-semibold mb-2 text-purple-400">Key Features</h2>
                                         <ul className="list-disc pl-5 mb-6 space-y-1">
                                             {project.features.map((feature, index) => (
@@ -93,6 +95,7 @@ export const ProjectsSection = () => {
                                             ))}
                                         </ul>
                                     </CardContent>
+                                    <CustomBadge badge={project.badge}/>
                                 </Card>
                             </div>
                             <div>

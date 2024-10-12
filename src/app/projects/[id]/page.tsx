@@ -1,7 +1,7 @@
 import {projects} from "@/app/data";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import {ProjectsSection} from "@/components/projectsSection";
+import {ProjectsSection} from "@/components/custom/projectsSection";
 
 
 export default function ProjectDetails() {
