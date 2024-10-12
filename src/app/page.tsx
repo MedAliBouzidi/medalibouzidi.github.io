@@ -10,6 +10,7 @@ import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
 import {FaGithub} from "react-icons/fa6";
 import Image from "next/image";
+import {CustomBadge} from "@/components/custom/CustomBadge";
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -99,15 +100,17 @@ export default function Home() {
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {technicalSkills.map((skill, index) => (
                                 <motion.div
+                                    className="flex"
                                     key={skill.key}
                                     initial={{opacity: 0, scale: 0.9}}
                                     animate={{opacity: 1, scale: 1}}
                                     transition={{duration: 0.3, delay: index * 0.1}}
                                 >
                                     <Card
-                                        className="bg-gray-700/50 border-gray-600 hover:border-green-500 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                                        className="grow bg-gray-700/50 border-gray-600 hover:border-green-500 transition-all hover:shadow-lg hover:shadow-green-500/10">
                                         <CardContent className="flex gap-x-5 p-4">
-                                            {skill.icon}<p className="text-lg font-semibold text-white">{skill.name}</p>
+                                            {skill.icon}
+                                            <p className="text-sm sm:text-lg font-semibold text-white">{skill.name}</p>
                                         </CardContent>
                                     </Card>
                                 </motion.div>
@@ -122,13 +125,14 @@ export default function Home() {
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {softSkills.map((skill, index) => (
                                 <motion.div
+                                    className="flex"
                                     key={skill}
                                     initial={{opacity: 0, scale: 0.9}}
                                     animate={{opacity: 1, scale: 1}}
                                     transition={{duration: 0.3, delay: index * 0.1}}
                                 >
                                     <Card
-                                        className="bg-gray-700/50 border-gray-600 hover:border-green-500 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                                        className="grow bg-gray-700/50 border-gray-600 hover:border-green-500 transition-all hover:shadow-lg hover:shadow-green-500/10">
                                         <CardContent className="p-4">
                                             <p className="text-lg font-semibold text-white">{skill}</p>
                                         </CardContent>
@@ -139,7 +143,7 @@ export default function Home() {
                     </div>
                 </section>
                 <section id="experiences" className="flex justify-center w-full py-12 md:py-24 lg:py-32 border-b border-gray-800">
-                    <div className="container px-4 md:px-6 md:w-11/12">
+                    <div className="container px-4 md:px-6 md:w-11/12 lg:w-7/12">
                         <motion.h2
                             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
                             Experiences
@@ -153,7 +157,7 @@ export default function Home() {
                                     animate={{opacity: 1, y: 0}}
                                     transition={{duration: 0.5, delay: index * 0.1}}
                                 >
-                                    <div className="md:w-1/4 flex flex-col items-center md:items-start">
+                                    <div className="md:min-w-fit flex flex-col items-center md:items-start">
                                         {experience.icon}
                                         <h3 className="text-xl font-semibold text-white mt-2">{experience.title}</h3>
                                         <p className="text-gray-400">{experience.company}</p>
@@ -179,13 +183,14 @@ export default function Home() {
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {projects.map((project, index) => (
                                 <motion.div
+                                    className="flex"
                                     key={project.id}
                                     initial={{opacity: 0, y: 20}}
                                     animate={{opacity: 1, y: 0}}
                                     transition={{duration: 0.5, delay: index * 0.1}}
                                 >
                                     <Card
-                                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/10">
+                                        className="grow relative bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/10">
                                         <CardHeader>
                                             <CardTitle className="text-white">{project.title}</CardTitle>
                                             <CardDescription className="text-gray-400">{project.description}</CardDescription>
@@ -198,6 +203,7 @@ export default function Home() {
                                                 </Button>
                                             </Link>
                                         </CardContent>
+                                        <CustomBadge badge={project.badge}/>
                                     </Card>
                                 </motion.div>
                             ))}
