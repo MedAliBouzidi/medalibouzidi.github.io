@@ -18,6 +18,7 @@ import {TbBrandNextjs} from "react-icons/tb";
 import {SiGit, SiGithub, SiGithubactions, SiLinux, SiMariadb, SiMongodb} from "react-icons/si";
 import {GlobeIcon, MobileIcon} from "@radix-ui/react-icons";
 
+
 export const navBarItems = ["About", "Skills", "Projects", "Experiences", "Resume"];
 
 export const projects: {
