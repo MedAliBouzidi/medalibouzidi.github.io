@@ -33,8 +33,8 @@ const CustomArrow = ({direction, onClick}: { direction: 'next' | 'prev', onClick
 }
 
 export const ProjectsSection = () => {
-    const {id} = useParams()
-    const project = projects.find(p => p.id === id)
+    const {slug} = useParams()
+    const project = projects.find(p => p.slug === slug)
 
     const sliderSettings = {
         dots: true,

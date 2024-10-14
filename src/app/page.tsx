@@ -164,7 +164,7 @@ export default function Home() {
                                             <CardDescription className="text-gray-400">{project.description}</CardDescription>
                                         </CardHeader>
                                         <CardContent>
-                                            <Link href={`/projects/${project.id}`}>
+                                            <Link href={`/projects/${project.slug}`}>
                                                 <Button variant="outline"
                                                         className="bg-gray-700/50 text-white hover:bg-gray-600 border-gray-600 transition-colors">
                                                     View Project
@@ -193,7 +193,7 @@ export default function Home() {
                                     animate={{opacity: 1, y: 0}}
                                     transition={{duration: 0.5, delay: index * 0.1}}
                                 >
-                                    <div className="md:min-w-fit flex flex-col items-center md:items-start">
+                                    <div className="md:w-1/4 flex flex-col items-center md:items-start">
                                         {experience.icon}
                                         <h3 className="text-xl font-semibold text-white mt-2">{experience.title}</h3>
                                         <p className="text-gray-400">{experience.company}</p>
@@ -202,8 +202,17 @@ export default function Home() {
                                             <span>{experience.period}</span>
                                         </div>
                                     </div>
-                                    <div className="md:w-3/4">
+                                    <div className="flex flex-col gap-y-3 md:w-3/4">
                                         <p className="text-gray-300">{experience.description}</p>
+                                        {experience.detailLink && (
+                                            <Link href={`/projects/${experience.detailLink}`}
+                                                  className="flex justify-end">
+                                                <Button variant="outline"
+                                                        className="bg-gray-700/50 text-white hover:bg-gray-600 border-gray-600 transition-colors">
+                                                    View Project
+                                                </Button>
+                                            </Link>
+                                        )}
                                     </div>
                                 </motion.div>
                             ))}
@@ -212,9 +221,9 @@ export default function Home() {
                 </section>
                 <section id="resume" className="flex justify-center w-full py-12 md:py-24 lg:pb-32 lg:pt-5 bg-gray-800/30">
                     <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-20 px-4 md:px-6">
-                        <div>
-                            <motion.h2 {...fadeInUp}
-                                       className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                        <motion.div {...fadeInUp}>
+                            <motion.h2
+                                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                                 Download My Resume
                             </motion.h2>
                             <motion.div className="max-w-md mx-auto text-center" {...fadeInUp}>
@@ -227,8 +236,10 @@ export default function Home() {
                                     Download Resume (PDF)
                                 </Button>
                             </motion.div>
-                        </div>
-                        <GithubStatusComp/>
+                        </motion.div>
+                        <motion.div {...fadeInUp}>
+                            <GithubStatusComp/>
+                        </motion.div>
                     </div>
                 </section>
             </main>
