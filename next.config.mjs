@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
+    //output: "export",
     //basePath:  '/portfolio',
     //assetPrefix: '/portfolio/',
     reactStrictMode: true,
     images: {
         domains: ['images.pexels.com'],
-        //unoptimized: true,
+        unoptimized: true,
     }
 };
 

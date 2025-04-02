@@ -11,5 +11,5 @@ export default function ProjectDetails() {
 }
 
 export function generateStaticParams() {
-    return projects.map(project => ({id: project.id}));
+    return projects.map(project => ({slug: project.slug}));
 }

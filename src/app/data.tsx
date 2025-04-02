@@ -1,4 +1,4 @@
-import {CodeIcon, DatabaseIcon, LayersIcon} from "lucide-react";
+import {LayersIcon} from "lucide-react";
 import {
     BiLogoAngular,
     BiLogoBootstrap,
@@ -16,12 +16,14 @@ import {
 } from "react-icons/bi";
 import {TbBrandNextjs} from "react-icons/tb";
 import {SiGit, SiGithub, SiGithubactions, SiLinux, SiMariadb, SiMongodb} from "react-icons/si";
+import {GlobeIcon, MobileIcon} from "@radix-ui/react-icons";
 
-export const navBarItems = ["About", "Skills", "Experiences", "Projects", "Resume"];
+export const navBarItems = ["About", "Skills", "Projects", "Experiences", "Resume"];
 
 export const projects: {
     id: string;
     title: string;
+    slug: string;
     badge: string;
     description: string;
     longDescription: string;
@@ -32,6 +34,7 @@ export const projects: {
     {
         id: "0b3c0c4b-8c1c-4a1d-8b8b-5d1b1d5d5b2e",
         title: "Comparator",
+        slug: "comparator",
         badge: "PFE",
         description: "A mobile application built to assist Tunisian individuals with day-to-day shopping by daily aggregating supermarket prices.",
         longDescription: `
@@ -79,6 +82,7 @@ export const projects: {
     {
         id: "b7c8d6c1-9e7d-4e0d-8b8b-5d1b1d5d5b2e",
         title: "Medical Blog",
+        slug: "medical-blog",
         badge: "internship",
         description: "A web application made for doctors and healthcare professionals to publish and discuss medical topics.",
         longDescription: `
@@ -111,6 +115,7 @@ export const projects: {
     {
         id: "ebee737a-1ba9-46ca-a24d-6153805fc641",
         title: "Hotel-X",
+        slug: "hotel-x",
         badge: "freelance",
         description: "A dynamic hotel management system that streamlines the process of managing offers, guest feedback, and room reservations for seamless hotel operations.",
         longDescription: `
@@ -139,6 +144,7 @@ export const projects: {
     {
         id: "d8d0e444-f696-48bd-80c2-c3e5929539bd",
         title: "Car Parking Reservation App",
+        slug: "car-parking-reservation-app",
         badge: "freelance",
         description: "A mobile solution that allows users to reserve parking spots in advance, reducing hassle and ensuring guaranteed parking availability in high-demand areas.",
         longDescription: `
@@ -162,6 +168,7 @@ export const projects: {
     {
         id: "dc3c4987-19b7-4453-87cf-8e0e43b79cb5",
         title: "CosmoGlowy",
+        slug: "cosmo-glowy",
         badge: "freelance",
         description: "A fully functional e-commerce platform for cosmetics, offering a seamless online shopping experience with integrated inventory management systems.",
         longDescription: `
@@ -190,6 +197,7 @@ export const projects: {
     {
         id: "cc7a4a4c-28e8-40aa-91ed-6414a877c783",
         title: "Shrink-It",
+        slug: "shrink-it",
         badge: "side-project",
         description: "A fast and reliable URL shortening service that offers quick link generation.",
         longDescription: `
@@ -215,6 +223,7 @@ export const projects: {
     {
         id: "804de677-48f5-4638-b923-5466bcfdd751",
         title: "YouTube Unsub",
+        slug: "youtube-unsub",
         badge: "side-project",
         description: "A mobile app for batch-unsubscribing from YouTube channels, simplifying subscription management.",
         longDescription: `
@@ -239,6 +248,7 @@ export const projects: {
     {
         id: "03da07a1-d2f0-497a-b24f-0f9a77e113ef",
         title: "Portfolio",
+        slug: "portfolio",
         badge: "side-project",
         description: "A personal portfolio highlighting my skills and projects, featuring a responsive design and interactive user experience.",
         longDescription: `
@@ -376,34 +386,36 @@ export const softSkills = [
     "Clean Code", "Problem Solver", "Curiosity", "Adaptability", "Time Management", "Agile Scrum"
 ];
 
-// Todo: Update experiences
 export const experiences: {
     title: string;
     company: string;
     period: string;
     description: string;
+    detailLink?: string;
     icon: JSX.Element;
 }[] = [
     {
-        title: "Junior Web Developer",
-        company: "Tech Innovators Inc.",
+        title: "Full Stack Developer",
+        company: "Freelance",
         period: "Jan 2023 - Present",
-        description: "Developed and maintained web applications using React and Node.js. Collaborated with the design team to implement responsive and accessible user interfaces.",
-        icon: <CodeIcon className="w-6 h-6 text-gray-400"/>,
+        description: "Developed and maintained web and mobile applications using various technologies, including Spring Boot, React, Angular, and Flutter. Collaborated with clients to understand their requirements and deliver high-quality solutions. Implement responsive and accessible user interfaces to enhance user experience.",
+        icon: <LayersIcon className="w-6 h-6 text-gray-400"/>,
+    },
+    {
+        title: "Full Stack Development Intern",
+        company: "CYPROS",
+        period: "Fev. 2022 – Jun. 2022",
+        description: " Build a mobile app designed to make daily shopping easier by helping users compare prices from different supermarkets in one place. With a simple, user-friendly interface, the app allows people to check for the best deals on groceries and household items, saving time and money. Users can access updated prices and make informed choices about where to shop, all from the convenience of their mobile phones. ",
+        detailLink: "comparator",
+        icon: <MobileIcon className="w-6 h-6 text-purple-400"/>,
     },
     {
         title: "Web Development Intern",
-        company: "Digital Solutions LLC",
-        period: "Jun 2022 - Dec 2022",
-        description: "Assisted in the development of client websites, gained hands-on experience with HTML, CSS, and JavaScript. Participated in code reviews and agile development processes.",
-        icon: <LayersIcon className="w-6 h-6 text-purple-400"/>,
-    },
-    {
-        title: "Freelance Web Designer",
-        company: "Self-employed",
-        period: "Jan 2022 - May 2022",
-        description: "Created custom websites for small businesses, focusing on user-centric design and SEO optimization. Managed client relationships and project timelines.",
-        icon: <DatabaseIcon className="w-6 h-6 text-green-400"/>,
+        company: "Wow-Soft",
+        period: "Aug. 2021 – Sep. 2021",
+        description: " A dedicated website for doctors and healthcare professionals to share, publish, and discuss medical topics and discoveries. It provides a space for experts to post articles, engage in discussions, and stay updated on the latest in healthcare, making a collaborative medical community. ",
+        detailLink: "medical-blog",
+        icon: <GlobeIcon className="w-6 h-6 text-green-400"/>,
     },
 ];
 
@@ -413,5 +425,3 @@ export const socialLinks = {
     linkedin: "https://www.linkedin.com/in/bouzidi-med-ali/",
     email: "mailto:bouzidi.medali20@gmail.com",
 }
-
-export const githubStats = "https://github-readme-stats-sigma-eight-43.vercel.app/api?username=MedAliBouzidi&hide=contribs,issues&show_icons=true&rank_icon=github&theme=transparent";

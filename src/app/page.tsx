@@ -5,12 +5,12 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import Link from "next/link"
 import {CalendarIcon, DownloadIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
-import {experiences, githubStats, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
+import {experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
 import {FaGithub} from "react-icons/fa6";
-import Image from "next/image";
 import {CustomBadge} from "@/components/custom/CustomBadge";
+import {GithubStatusComp} from "@/components/custom/GithubStatusComp";
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -142,38 +142,6 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section id="experiences" className="flex justify-center w-full py-12 md:py-24 lg:py-32 border-b border-gray-800">
-                    <div className="container px-4 md:px-6 md:w-11/12 lg:w-7/12">
-                        <motion.h2
-                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
-                            Experiences
-                        </motion.h2>
-                        <div className="space-y-10">
-                            {experiences.map((experience, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="flex flex-col md:flex-row gap-4 bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10"
-                                    initial={{opacity: 0, y: 20}}
-                                    animate={{opacity: 1, y: 0}}
-                                    transition={{duration: 0.5, delay: index * 0.1}}
-                                >
-                                    <div className="md:min-w-fit flex flex-col items-center md:items-start">
-                                        {experience.icon}
-                                        <h3 className="text-xl font-semibold text-white mt-2">{experience.title}</h3>
-                                        <p className="text-gray-400">{experience.company}</p>
-                                        <div className="flex items-center mt-2 text-gray-500">
-                                            <CalendarIcon className="w-4 h-4 mr-2"/>
-                                            <span>{experience.period}</span>
-                                        </div>
-                                    </div>
-                                    <div className="md:w-3/4">
-                                        <p className="text-gray-300">{experience.description}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
                 <section id="projects" className="flex justify-center w-full py-12 md:py-24 lg:py-32 border-b border-gray-800">
                     <div className="container px-4 md:px-6 md:w-11/12">
                         <motion.h2
@@ -196,7 +164,7 @@ export default function Home() {
                                             <CardDescription className="text-gray-400">{project.description}</CardDescription>
                                         </CardHeader>
                                         <CardContent>
-                                            <Link href={`/projects/${project.id}`}>
+                                            <Link href={`/projects/${project.slug}`}>
                                                 <Button variant="outline"
                                                         className="bg-gray-700/50 text-white hover:bg-gray-600 border-gray-600 transition-colors">
                                                     View Project
@@ -208,26 +176,69 @@ export default function Home() {
                                 </motion.div>
                             ))}
                         </div>
-                        <div className="flex justify-center mt-24">
-                            <Image alt="stats" src={githubStats} width={600} height={300}/>
+                    </div>
+                </section>
+                <section id="experiences" className="flex justify-center w-full py-12 md:py-24 lg:py-32 border-b border-gray-800">
+                    <div className="container px-4 md:px-6 md:w-11/12 lg:w-7/12">
+                        <motion.h2
+                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
+                            Experiences
+                        </motion.h2>
+                        <div className="space-y-10">
+                            {experiences.map((experience, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="flex flex-col md:flex-row gap-4 bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10"
+                                    initial={{opacity: 0, y: 20}}
+                                    animate={{opacity: 1, y: 0}}
+                                    transition={{duration: 0.5, delay: index * 0.1}}
+                                >
+                                    <div className="md:w-1/4 flex flex-col items-center md:items-start">
+                                        {experience.icon}
+                                        <h3 className="text-xl font-semibold text-white mt-2">{experience.title}</h3>
+                                        <p className="text-gray-400">{experience.company}</p>
+                                        <div className="flex items-center mt-2 text-gray-500">
+                                            <CalendarIcon className="w-4 h-4 mr-2"/>
+                                            <span>{experience.period}</span>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col gap-y-3 md:w-3/4">
+                                        <p className="text-gray-300">{experience.description}</p>
+                                        {experience.detailLink && (
+                                            <Link href={`/projects/${experience.detailLink}`}
+                                                  className="flex justify-end">
+                                                <Button variant="outline"
+                                                        className="bg-gray-700/50 text-white hover:bg-gray-600 border-gray-600 transition-colors">
+                                                    View Project
+                                                </Button>
+                                            </Link>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </section>
                 <section id="resume" className="flex justify-center w-full py-12 md:py-24 lg:pb-32 lg:pt-5 bg-gray-800/30">
-                    <div className="container px-4 md:px-6">
-                        <motion.h2
-                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" {...fadeInUp}>
-                            Download My Resume
-                        </motion.h2>
-                        <motion.div className="max-w-md mx-auto text-center" {...fadeInUp}>
-                            <p className="text-gray-300 mb-6">
-                                Interested in my qualifications? Download my resume to learn more about my skills, experiences, and achievements.
-                            </p>
-                            <Button onClick={() => window.open("/assets/resume.pdf")}
-                                    className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
-                                <DownloadIcon className="mr-2 h-4 w-4"/>
-                                Download Resume (PDF)
-                            </Button>
+                    <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-20 px-4 md:px-6">
+                        <motion.div {...fadeInUp}>
+                            <motion.h2
+                                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                                Download My Resume
+                            </motion.h2>
+                            <motion.div className="max-w-md mx-auto text-center" {...fadeInUp}>
+                                <p className="text-gray-300 mb-6">
+                                    Interested in my qualifications? Download my resume to learn more about my skills, experiences, and achievements.
+                                </p>
+                                <Button onClick={() => window.open("/assets/resume.pdf")}
+                                        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
+                                    <DownloadIcon className="mr-2 h-4 w-4"/>
+                                    Download Resume (PDF)
+                                </Button>
+                            </motion.div>
+                        </motion.div>
+                        <motion.div {...fadeInUp}>
+                            <GithubStatusComp/>
                         </motion.div>
                     </div>
                 </section>

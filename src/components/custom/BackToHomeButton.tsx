@@ -9,11 +9,11 @@ export const BackToHomeButton = () => {
 
     return (
         <Button
-            onClick={() => router.back()}
+            onClick={() => router.replace('/')}
             variant="ghost"
             className="text-gray-300 hover:text-white hover:bg-gray-600 hover:bg-opacity-40">
             <ArrowLeft className="mr-2 h-4 w-4"/>
-            Back to Projects
+            Back to Home
         </Button>
     );
 }
