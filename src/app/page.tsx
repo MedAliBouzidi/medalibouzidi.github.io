@@ -230,11 +230,12 @@ export default function Home() {
                                 <p className="text-gray-300 mb-6">
                                     Interested in my qualifications? Download my resume to learn more about my skills, experiences, and achievements.
                                 </p>
-                                <Button onClick={() => window.open("/assets/resume.pdf")}
-                                        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
-                                    <DownloadIcon className="mr-2 h-4 w-4"/>
-                                    Download Resume (PDF)
-                                </Button>
+                                <a href={"/assets/resume.pdf"} target="_blank" download="resume.pdf">
+                                    <div className="flex flex-row w-full h-12 justify-center items-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
+                                        <DownloadIcon className="mr-2 h-4 w-4"/>
+                                        Download Resume (PDF)
+                                    </div>
+                                </a>
                             </motion.div>
                         </motion.div>
                         <motion.div {...fadeInUp}>
