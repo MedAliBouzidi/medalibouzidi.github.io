@@ -69,7 +69,7 @@ export default function Home() {
                 <section id="about"
                          className="flex justify-center items-center w-full h-[calc(100dvh-4rem)] py-12 md:py-24 lg:py-32 xl:py-48 border-b border-gray-800">
 
-                    <div className="absolute w-full h-full opacity-30 overflow-hidden ">
+                    <div className="absolute w-full h-[calc(100dvh-4rem)] opacity-30 overflow-hidden ">
                         <motion.div
                             className="absolute top-1/2 left-2/3 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 rounded-full opacity-30"
                             initial={{scale: 0.5}}
