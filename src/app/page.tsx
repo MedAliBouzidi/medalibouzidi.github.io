@@ -3,7 +3,7 @@
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import Link from "next/link"
-import {CalendarIcon, DownloadIcon, LinkedinIcon, MailIcon, Menu, Snowflake, X} from "lucide-react"
+import {CalendarIcon, DownloadIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
 import {experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
