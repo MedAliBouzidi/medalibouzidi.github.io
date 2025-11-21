@@ -281,104 +281,136 @@ export const projects: {
 
 export const technicalSkills = [
     {
-        key: "spring-boot",
-        name: "Spring Boot",
+        key: "back-end",
+        name: "Back-End",
         icon: (<BiLogoSpringBoot className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+        skills: [
+            {
+                key: "spring-boot",
+                name: "Spring Boot",
+                icon: (<BiLogoSpringBoot className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "flask",
+                name: "Flask",
+                icon: (<BiLogoFlask className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "java",
+                name: "Java",
+                icon: (<BiLogoJava className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "python",
+                name: "Python",
+                icon: (<BiLogoPython className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "javascript",
+                name: "JavaScript",
+                icon: (<BiLogoJavascript className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "typescript",
+                name: "Typescript",
+                icon: (<BiLogoTypescript className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+        ],
+        hidden: true
     },
     {
-        key: "angular",
-        name: "Angular",
-        icon: (<BiLogoAngular className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "flutter",
-        name: "Flutter",
-        icon: (<BiLogoFlutter className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "reactjs",
-        name: "ReactJS",
+        key: "front-end",
+        name: "Front-End",
         icon: (<BiLogoReact className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+        skills: [
+            {
+                key: "angular",
+                name: "Angular",
+                icon: (<BiLogoAngular className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "flutter",
+                name: "Flutter",
+                icon: (<BiLogoFlutter className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "reactjs",
+                name: "ReactJS",
+                icon: (<BiLogoReact className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "nextjs",
+                name: "NextJS",
+                icon: (<TbBrandNextjs className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "tailwind-css",
+                name: "Tailwind CSS",
+                icon: (<BiLogoTailwindCss className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "bootstrap",
+                name: "Bootstrap",
+                icon: (<BiLogoBootstrap className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+        ],
+        hidden: true
     },
     {
-        key: "nextjs",
-        name: "NextJS",
-        icon: (<TbBrandNextjs className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "flask",
-        name: "Flask",
-        icon: (<BiLogoFlask className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "java",
-        name: "Java",
-        icon: (<BiLogoJava className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "python",
-        name: "Python",
-        icon: (<BiLogoPython className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "javascript",
-        name: "JavaScript",
-        icon: (<BiLogoJavascript className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "typescript",
-        name: "Typescript",
-        icon: (<BiLogoTypescript className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "tailwind-css",
-        name: "Tailwind CSS",
-        icon: (<BiLogoTailwindCss className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "bootstrap",
-        name: "Bootstrap",
-        icon: (<BiLogoBootstrap className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "mongodb",
-        name: "MongoDB",
+        key: "databases",
+        name: "Databases",
         icon: (<SiMongodb className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+        skills: [
+            {
+                key: "mongodb",
+                name: "MongoDB",
+                icon: (<SiMongodb className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "mariadb",
+                name: "MariaDB",
+                icon: (<SiMariadb className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "firebase",
+                name: "Firebase",
+                icon: (<BiLogoFirebase className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+        ],
+        hidden: true
     },
     {
-        key: "mariadb",
-        name: "MariaDB",
-        icon: (<SiMariadb className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "firebase",
-        name: "Firebase",
-        icon: (<BiLogoFirebase className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "docker",
-        name: "Docker",
+        key: "devops",
+        name: "DevOps",
         icon: (<BiLogoDocker className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "git",
-        name: "Git",
-        icon: (<SiGit className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "github",
-        name: "GitHub",
-        icon: (<SiGithub className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "github-actions",
-        name: "GitHub Actions",
-        icon: (<SiGithubactions className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
-    },
-    {
-        key: "linux-os",
-        name: "Linux OS",
-        icon: (<SiLinux className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+        skills: [
+            {
+                key: "docker",
+                name: "Docker",
+                icon: (<BiLogoDocker className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "git",
+                name: "Git",
+                icon: (<SiGit className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "github",
+                name: "GitHub",
+                icon: (<SiGithub className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "github-actions",
+                name: "GitHub Actions",
+                icon: (<SiGithubactions className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+            {
+                key: "linux-os",
+                name: "Linux OS",
+                icon: (<SiLinux className="h-6 w-6 sm:h-8 sm:w-8 text-white"/>),
+            },
+        ],
+        hidden: true
     },
 ];
 
