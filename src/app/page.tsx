@@ -230,7 +230,7 @@ export default function Home() {
                                 <p className="text-gray-300 mb-6">
                                     Interested in my qualifications? Download my resume to learn more about my skills, experiences, and achievements.
                                 </p>
-                                <a href={"/assets/resume.pdf"} target="_blank" download="resume.pdf">
+                                <a href={"/assets/Bouzidi_Mohamed_Ali_Resume.pdf"} target="_blank" download="resume.pdf">
                                     <div className="flex flex-row w-full h-12 justify-center items-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">
                                         <DownloadIcon className="mr-2 h-4 w-4"/>
                                         Download Resume (PDF)
