@@ -2,7 +2,7 @@
 
 This repository contains the **source code of my personal portfolio website**, hosted using **GitHub Pages**.
 
-👉 **Live Website:** [Portfolio](https://medalibouzidi.github.io/portfolio/)
+👉 **Live Website:** [Portfolio](http://medalibouzidi.github.io/)
 
 ---
 
