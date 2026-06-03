@@ -1,16 +1,17 @@
 "use client"
 
 import {Button} from "@/components/ui/button"
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
 import Link from "next/link"
 import {CalendarIcon, DownloadIcon, LinkedinIcon, MailIcon, Menu, X} from "lucide-react"
 import {AnimatePresence, motion} from "framer-motion"
-import {experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
+import {certifs, experiences, navBarItems, projects, socialLinks, softSkills, technicalSkills} from "@/app/data";
 import {useState} from "react";
 import {PiLinktreeLogo} from "react-icons/pi";
 import {FaGithub} from "react-icons/fa6";
 import {CustomBadge} from "@/components/custom/CustomBadge";
 import {GithubStatusComp} from "@/components/custom/GithubStatusComp";
+import Image from "next/image";
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -126,6 +127,40 @@ export default function Home() {
                         </div>
                     </motion.div>
                 </section>
+                <section id="certifs"
+                         className="flex flex-col items-center gap-y-14 w-full py-12 md:py-24 lg:py-32 bg-gray-800/30 border-b border-gray-700">
+                    <div className="container px-4 md:px-6 md:w-11/12 text-center">
+                        <motion.h2
+                            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600" {...fadeInUp}>
+                            Certifications
+                        </motion.h2>
+                        <div className="flex justify-center gap-20">
+                            {certifs.map((certif, index) => (
+                                <Link
+                                    key={`link-certif-${index}`}
+                                    href={certif.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <Card
+                                        key={`certif-${index}`}
+                                        className={"w-72 h-[22rem] hover:cursor-pointer  bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/10"}>
+                                        <CardContent
+                                            className={"flex flex-col items-center"}>
+                                            <Image src={certif.badge}
+                                                   alt={certif.title}
+                                                   className={"m-3"}
+                                                   width={200}
+                                                   height={200}/>
+                                        </CardContent>
+                                        <CardFooter className={"flex justify-center text-white"}>
+                                            <p>{certif.title}</p>
+                                        </CardFooter>
+                                    </Card>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
                 <section id="skills"
                          className="flex flex-col items-center gap-y-14 w-full py-12 md:py-24 lg:py-32 bg-gray-800/30 border-b border-gray-700">
                     <div className="container px-4 md:px-6 md:w-11/12 text-center">
@@ -136,7 +171,7 @@ export default function Home() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             {technicalSkills.map((category, index) => (
                                 <motion.div
-                                    className={`flex ${'dark'}`}
+                                    className={`flex dark`}
                                     key={category.key}
                                     initial={{opacity: 0, y: 20}}
                                     animate={{opacity: 1, y: 0}}
@@ -292,7 +327,7 @@ export default function Home() {
                                     Interested in my qualifications? Download my resume to learn more about my skills,
                                     experiences, and achievements.
                                 </p>
-                                <a href={"/assets/Bouzidi_Mohamed_Ali_Resume.pdf"} target="_blank"
+                                <a href={"/assets/resume.pdf"} target="_blank"
                                    download="resume.pdf">
                                     <div
                                         className="flex flex-row w-full h-12 justify-center items-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-colors">

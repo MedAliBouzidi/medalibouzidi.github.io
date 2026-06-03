@@ -85,3 +85,36 @@ body {
         transform: translateY(100%);
     }
 }
+
+.slick-dots li {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 10px !important;
+    margin: 0 4px !important;
+}
+
+.slick-dots li button {
+    display: block !important;
+    width: 10px !important;
+    height: 10px !important;
+    padding: 0 !important;
+    background: rgba(255,255,255,0.4) !important;
+    border-radius: 9999px !important;
+    transition: all 0.3s !important;
+}
+
+.slick-dots li button:before {
+    display: none !important;
+}
+
+.slick-dots .slick-active {
+    width: 24px !important;
+    height: 10px !important;
+}
+
+.slick-dots .slick-active button {
+    width: 24px !important;
+    height: 10px !important;
+    background: white !important;
+}

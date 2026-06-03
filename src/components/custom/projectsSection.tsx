@@ -13,6 +13,8 @@ import Link from "next/link";
 import {PiLinktreeLogo} from "react-icons/pi";
 import {FaGithub} from "react-icons/fa6";
 import {CustomBadge} from "@/components/custom/CustomBadge";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CustomArrow = ({direction, onClick}: { direction: 'next' | 'prev', onClick?: () => void }) => {
     return (
@@ -38,19 +40,21 @@ export const ProjectsSection = () => {
 
     const sliderSettings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: <CustomArrow direction="next"/>,
         prevArrow: <CustomArrow direction="prev"/>,
+
     }
 
     return (!project)
         ? (<NotFound/>)
         : (
             <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100">
-                <header className="px-4 lg:px-6 h-14 flex items-center border-b border-gray-800 backdrop-blur-sm bg-gray-900/50 fixed w-full z-10">
+                <header
+                    className="px-4 lg:px-6 h-14 flex items-center border-b border-gray-800 backdrop-blur-sm bg-gray-900/50 fixed w-full z-10">
                     <BackToHomeButton/>
                 </header>
                 <main className="grow pt-14 pb-8 px-4 sm:px-6 lg:px-8">
@@ -63,17 +67,20 @@ export const ProjectsSection = () => {
                         {
                             project.images.length == 0
                                 ? (<div className="mb-8 relative"></div>)
-                                : (<div className="mb-8 relative">
-                                    <Slider {...sliderSettings}>
+                                : (<div className="mb-12 relative">
+                                    <Slider  {...sliderSettings}>
                                         {project.images.map((image, index) => (
                                             <div key={index} className="outline-none">
-                                                <Image
-                                                    src={image}
-                                                    alt={`${project.title} - Image ${index + 1}`}
-                                                    width={1200}
-                                                    height={600}
-                                                    className="rounded-lg shadow-lg object-cover w-full h-[600px]"
-                                                />
+                                                <div
+                                                    className="flex items-center justify-center w-full h-[400px] md:h-[600px] rounded-lg overflow-hidden">
+                                                    <Image
+                                                        src={image}
+                                                        alt={`${project.title} - Image ${index + 1}`}
+                                                        width={1200}
+                                                        height={600}
+                                                        className="max-w-full max-h-[400px] md:max-h-[600px] w-auto h-auto object-contain rounded-lg shadow-lg"
+                                                    />
+                                                </div>
                                             </div>
                                         ))}
                                     </Slider>
@@ -103,7 +110,8 @@ export const ProjectsSection = () => {
                                     <CardContent className="p-6">
                                         <h2 className="text-xl font-semibold mb-4 text-blue-400">Project Details</h2>
                                         <div className="mb-4">
-                                            <h3 className="text-lg font-semibold mb-2 text-gray-200">Technologies Used</h3>
+                                            <h3 className="text-lg font-semibold mb-2 text-gray-200">Technologies
+                                                Used</h3>
                                             <div className="flex flex-wrap gap-2">
                                                 {project.technologies.map((tech, index) => (
                                                     <span
@@ -120,7 +128,8 @@ export const ProjectsSection = () => {
                         </div>
                     </motion.div>
                 </main>
-                <footer className="flex flex-col-reverse gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
+                <footer
+                    className="flex flex-col-reverse gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800">
                     <p className="text-xs text-gray-400">© 2024 Bouzidi Mohamed Ali. All rights reserved.</p>
                     <nav className="sm:ml-auto flex gap-4 sm:gap-6">
                         <Link className="text-xs hover:text-gray-300 transition-colors"
