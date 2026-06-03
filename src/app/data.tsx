@@ -18,7 +18,24 @@ import {TbBrandNextjs} from "react-icons/tb";
 import {SiGit, SiGithub, SiGithubactions, SiLinux, SiMariadb, SiMongodb} from "react-icons/si";
 import {GlobeIcon, MobileIcon} from "@radix-ui/react-icons";
 
-export const navBarItems = ["About", "Skills", "Projects", "Experiences", "Resume"];
+export const navBarItems = ["About", "Certifs", "Skills", "Projects", "Experiences", "Resume"];
+
+export const certifs: {
+    title: string;
+    url: string;
+    badge: string;
+}[] = [
+    {
+        title: '[PCAP-31-03] PCAP™ – Certified Associate Python Programmer',
+        url: 'https://www.credly.com/badges/40014013-8f1a-406b-a092-31b963ed7be9',
+        badge: '/assets/certifs/pcap-31-03.png'
+    },
+    {
+        title: 'EF SET Certificate',
+        url:'https://cert.efset.org/JEfU1h',
+        badge: '/assets/certifs/ef-set-english.png'
+    }
+];
 
 export const projects: {
     id: string;
@@ -31,6 +48,120 @@ export const projects: {
     features: string[];
     images: string[];
 }[] = [
+    {
+        id: 'd9e0c39b-cedd-4838-aac7-685df4df4313',
+        title: 'PodStudio',
+        slug: 'pod-studio',
+        badge: 'Academic',
+        description: 'A comprehensive web platform for users, enabling seamless booking of professional podcast recording studios.',
+        longDescription: `
+            PodStudio is a comprehensive web platform for Tunisian users, enabling seamless booking of professional podcast recording studios. 
+            The platform provides real-time studio availability, session management, and a complete administration system built entirely without frameworks.
+            <br/><br/>
+            The application efficiently separates concerns through a Service-Entity architecture, with studio, equipment, and booking data managed via PDO-powered services, 
+            and a role-based session system handling authentication for both clients and administrators.
+            <br/><br/>
+            The web interface, developed with vanilla HTML, CSS, and JavaScript, delivers a performant, responsive experience that allows users to browse studios, 
+            manage bookings, and track their sessions from any device.
+            <br/><br/>
+            The system is built on PHP 8.1 with a clean layered architecture for maintainability, Docker for containerized deployment, 
+            and a custom CSS design system for consistent UI across all pages. 
+            The development process followed an academic project structure with a single developer.
+        `,
+        technologies: [
+            'PHP 8.1',
+            'MySQL',
+            'HTML5',
+            'CSS3',
+            'JavaScript',
+            'Chart.js',
+            'PDO',
+            'Git',
+            'GitHub',
+        ],
+        features: [
+            'Studio browsing with search, sort, and real-time availability',
+            'Session booking with live price calculator and slot conflict detection',
+            'Add-on package system with equipment inclusion toggle',
+            'Role-based authentication for clients and administrators',
+            'Full admin CRUD for studios, equipment, packages, and bookings',
+            'Image upload with MIME validation and drag-and-drop preview',
+            'Revenue and booking statistics dashboard with Chart.js',
+        ],
+        images: [
+            '/assets/demos/pod-studio/auth-login.png',
+            '/assets/demos/pod-studio/auth-register.png',
+            '/assets/demos/pod-studio/client-home.png',
+            '/assets/demos/pod-studio/client-studio.png',
+            '/assets/demos/pod-studio/client-bookings.png',
+            '/assets/demos/pod-studio/client-profile.png',
+            '/assets/demos/pod-studio/admin-bookings-edit.png',
+            '/assets/demos/pod-studio/admin-bookings-index.png',
+            '/assets/demos/pod-studio/admin-clients-index.png',
+            '/assets/demos/pod-studio/admin-dashboard.png',
+            '/assets/demos/pod-studio/admin-equipments-create.png',
+            '/assets/demos/pod-studio/admin-equipments-edit.png',
+            '/assets/demos/pod-studio/admin-equipments-index.png',
+            '/assets/demos/pod-studio/admin-packages-create.png',
+            '/assets/demos/pod-studio/admin-packages-edit.png',
+            '/assets/demos/pod-studio/admin-packages-index.png',
+            '/assets/demos/pod-studio/admin-studios-create.png',
+            '/assets/demos/pod-studio/admin-studios-edit.png',
+            '/assets/demos/pod-studio/admin-studios-index.png',
+        ],
+    },
+    {
+        id: '4d921437-193b-40cb-aa23-c7474e103417',
+        title: 'JavaResto',
+        slug: 'java-resto',
+        badge: 'Academic',
+        description: 'A restaurant management desktop application designed to handle the main operational flow of a multi-branch restaurant system',
+        longDescription: `
+            JavaResto is a restaurant management desktop application designed to handle the main operational flow of a multi-branch restaurant system. 
+            The application allows clients to create accounts, authenticate, browse available restaurant branches, select free tables, 
+            dd dishes to an order, confirm reservations, view reservation history, and pay pending orders.
+            <br/><br/>
+            Built with Java Swing, the application provides a complete desktop interface with separate client and admin experiences. 
+            The backend logic is organized through service interfaces and implementations, while MySQL stores restaurants, tables, dishes, users, orders, and order items. 
+            JDBC is used for database communication, and Docker Compose provides a simple MySQL setup for local development.
+            <br/><br/>
+            The project also includes seeded demo data with multiple JavaResto branches, menu items, tables, users, managers, and sample orders. 
+            Order operations update dish stock automatically, table availability changes when reservations are created or paid, 
+            and invoice utilities generate clear itemized billing summaries.
+            `,
+        technologies: [
+            "Java 17",
+            "Java Swing",
+            "MySQL",
+            "JDBC",
+            "Docker Compose",
+            "Git",
+            "GitHub"
+        ],
+        features: [
+            'Client and admin authentication with hashed passwords',
+            'Client registration from the Swing interface',
+            'Multi-restaurant branch browsing and table reservation',
+            'Table availability management with occupied/free states',
+            'Dish ordering with quantity handling and stock updates',
+            'Reservation history with paid and unpaid filtering',
+            'Invoice generation with order totals and payment status',
+            'Admin dashboard for restaurants, tables, dishes, users, and active orders',
+            'MySQL persistence configured through environment variables or .env',
+            'Demo data seeding for fast testing and presentation',
+        ],
+        images: [
+            '/assets/demos/java-resto/Screenshot_20260518_195046.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195115.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195135.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195335.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195411.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195443.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195453.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195459.png',
+            '/assets/demos/java-resto/Screenshot_20260518_195504.png',
+        ],
+    },
     {
         id: "0b3c0c4b-8c1c-4a1d-8b8b-5d1b1d5d5b2e",
         title: "Comparator",
