@@ -134,7 +134,7 @@ export default function Home() {
                             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600" {...fadeInUp}>
                             Certifications
                         </motion.h2>
-                        <div className="flex justify-center gap-20">
+                        <div className="flex flex-col md:flex-row items-center md:justify-center gap-20">
                             {certifs.map((certif, index) => (
                                 <Link
                                     key={`link-certif-${index}`}
