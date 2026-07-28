@@ -26,6 +26,11 @@ export const certifs: {
     badge: string;
 }[] = [
     {
+        title: '[RHCSA] RedHat Certified System Administrator',
+        url: 'https://www.credly.com/badges/46fcc7ba-b115-4802-b123-ee3c9f9ee472',
+        badge: '/assets/certifs/red-hat-certified-system-administrator-rhcsa.png'
+    },
+    {
         title: '[PCAP-31-03] PCAP™ – Certified Associate Python Programmer',
         url: 'https://www.credly.com/badges/40014013-8f1a-406b-a092-31b963ed7be9',
         badge: '/assets/certifs/pcap-31-03.png'
